@@ -12,7 +12,7 @@ sk_tempo, "date", ano, mes,	dia, nome_mes, nome_mes_abreviado, nome_dia_da_seman
   <b>Pré-visualização</b>
 </p>
 
-OBS: sk_tempo é a chave substituta para fazer as ligações de tabela de forma otimizada na modelagem dimensional em Data WareHouse..
+OBS: sk_tempo é a chave substituta para fazer as ligações de tabelas de forma otimizada na modelagem dimensional para Data WareHouse.
 
 ## Script SQL
 ```
