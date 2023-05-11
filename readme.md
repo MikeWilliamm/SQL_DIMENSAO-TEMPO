@@ -5,7 +5,7 @@ Script de fácil adaptação para diferentes casos de uso.
 ## Colunas 
 As colunas geradas pelo script são:
 
-sk_tempo, "date", ano, mes,	dia, nome_mes, nome_mes_abreviado, nome_dia_da_semana, periodo, periodo_abreviado, month_name,	month_name_abbreviated,	day_of_week, "period", period_abbreviated.
+sk_tempo, "date", ano, mes,	dia, nome_mes, nome_mes_abreviado, nome_dia_da_semana, periodo, periodo_abreviado, nome_mes_numerico, month_name,	month_name_abbreviated,	day_of_week, "period", period_abbreviated.
 
 <p align="center">
   <img  src="img_exemplo.png">
@@ -106,6 +106,7 @@ select
  		when t1.mes = 12 then 'Dez' || '/' || extract(YEAR from t1."date")
  		else null
  	end as periodo_abreviado,
+ 	cast(extract(year from t1."date")||lpad(extract(month from t1."date")::text,2,'0') as integer) as ano_mes_numerico,
  	case 
  		when t1.mes = 1 then 'January'
  		when t1.mes = 2 then 'February'
