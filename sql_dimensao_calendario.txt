@@ -18,6 +18,8 @@ select
  	t1.ano,
  	t1.mes,
  	t1.dia,
+ 	cast(extract(year from t1."date")||lpad(extract(month from t1."date")::text,2,'0') as integer) as month_sort,
+ 	extract(isodow from t1."date") as numero_dia_da_semana,
  	case 
  		when t1.mes = 1 then 'Janeiro'
  		when t1.mes = 2 then 'Fevereiro'
